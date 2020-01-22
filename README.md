@@ -1,1 +1,1 @@
-# Stepick_test_project
+# Stepik_test_project
