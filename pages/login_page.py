@@ -10,8 +10,8 @@ class LoginPage(BasePage):
 
     def should_be_login_url(self):
         # реализуйте проверку на корректный url адрес
-        current_url=self.current_url()
-        assert self.current_url().find("login")!=-1,"URL doesn't include 'login' part"
+        does_login_exist=self.browser.current_url
+        assert does_login_exist.find("login")!=-1, f"URL doesn't include 'login' part, {does_login_exist}"
 
     def should_be_login_form(self):
         # реализуйте проверку, что есть форма логина
