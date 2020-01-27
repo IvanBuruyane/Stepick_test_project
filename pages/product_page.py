@@ -10,7 +10,8 @@ class ProductPage(BasePage):
         assert self.is_element_present(*ProductPageLocators.SUCCESSFULL_MESSAGE),"Alert message isn't displayed"
 
     def successfull_message_contains_product_name(self,text):
-        assert self.browser.find_element(*ProductPageLocators.SUCCESSFULL_MESSAGE).text.find(text)!=-1,"Alert message is displayed, but without product name"
+        product_name_in_message=self.browser.find_element(*ProductPageLocators.SUCCESSFULL_MESSAGE).text
+        assert product_name_in_message==text,"Alert message is displayed, but with different product name"
 
     def should_be_price_in_basket_and_in_message(self):
         product_price=self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text
